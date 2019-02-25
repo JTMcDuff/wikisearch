@@ -5,6 +5,7 @@
     <title>Wikisearch</title>
     <script src="apiScripts.js"></script>
     <script src="domScripts.js"></script>
+    <script src="sortingScripts.js"></script>
   </head>
   <body>
   	<header>
@@ -16,6 +17,9 @@
 	  		</button>
 	  		<button type="button" name="Clear Results" onclick="clearResults()">
 	  			Clear
+	  		</button>
+	  		<button type="button" name="Sort by Title" onclick="sortByTitle()">
+	  			Sort by Title
 	  		</button>
   		</form>
   	</header>
@@ -40,6 +44,7 @@
   	*	]
 	*/
   	let = wikiResults = [];
+  	let alphaSort = true;
 
   	/**
   	* @function handles searching and processing wikipedia
