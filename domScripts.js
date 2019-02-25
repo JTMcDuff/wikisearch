@@ -54,11 +54,30 @@ function formatResult(result) {
 
 /**
  * @function -- renders results onto DOM
-* @inputs -- formatted array
+ * @inputs -- formatted array
 */
 function renderResults(results) {
-	var resultTarget = document.getElementById('search-results');
+	clearResults();
+	
+	let fragment = document.createDocumentFragment();
+	let resultTarget = document.getElementById('results-container');
+
 	results.forEach(result => {
-		resultTarget.appendChild(result);
-	})	
+		fragment.appendChild(result[1]);
+	});
+
+	resultTarget.appendChild(fragment);
+};
+
+/**
+ * @function -- clear search div and recreate
+*/
+function clearResults() {
+	let parent = document.getElementById('main-search');
+	let child = document.getElementById('results-container');
+	parent.removeChild(child);
+
+	let resultsDiv = document.createElement('div');
+	resultsDiv.id = "results-container";
+	parent.appendChild(resultsDiv);
 };

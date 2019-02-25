@@ -14,13 +14,16 @@
 	  		<button type="button" name="Search Button" onclick="searchWiki()">
 	  			Search
 	  		</button>
+	  		<button type="button" name="Clear Results" onclick="clearResults()">
+	  			Clear
+	  		</button>
   		</form>
   	</header>
 
-  	<main>
+  	<main id="main-search">
   		<h2> Search Results</h2>
 
-  		<div id="search-results"></div>
+  		<div id="results-container"></div>
 			
   		</div>
 
@@ -38,8 +41,6 @@
 	*/
   	let = wikiResults = [];
 
-  	// *** INPUT AND DOM FUNCTIONS ***
-
   	/**
   	* @function handles searching and processing wikipedia
   	*/
@@ -48,7 +49,7 @@
   		makeWikiAPICall(searchTerm)
   		.then(results =>{
   			wikiResults = formatResults(results);
-  			//renderResults(wikiResults);
+  			renderResults(wikiResults);
   		}).catch(error => {
   			alert('Something went wrong ', error);
   		});
