@@ -12,6 +12,7 @@
   		<h1>Wikisearch</h1>
   		<form>
 	  		<input type="text" id="search-input" name="Search Wikipedia" value="Search Me">
+	  		<input type="text" id="search-num-items" name="Number of Results" value="5">
 	  		<button type="button" name="Search Button" onclick="searchWiki()">
 	  			Search
 	  		</button>
@@ -20,6 +21,9 @@
 	  		</button>
 	  		<button type="button" name="Sort by Title" onclick="sortByTitle()">
 	  			Sort by Title
+	  		</button>
+	  		<button type="button" name="Sort by Word Count" onclick="sortByWordCount()">
+	  			Sort by Word Count
 	  		</button>
   		</form>
   	</header>
@@ -40,18 +44,20 @@
   	// Init list store for easier sorting later.
   	/**
   	* format: [
-	*		[data,html object]
-  	*	]
+	*			[data,html object]
+  	*		  ]
 	*/
   	let = wikiResults = [];
+  	// Counters for tracking sorting, allowing them to "toggle";
   	let alphaSort = true;
+  	let wordCountSort = true;
 
   	/**
   	* @function handles searching and processing wikipedia
   	*/
   	function searchWiki() {
-  		let searchTerm = getSearchTerm();
-  		makeWikiAPICall(searchTerm)
+  		let searchTerms = getSearchTerms();
+  		makeWikiAPICall(searchTerms)
   		.then(results =>{
   			wikiResults = formatResults(results);
   			renderResults(wikiResults);
@@ -60,6 +66,5 @@
   		});
   	};
 
- 
   </script>
 </html>

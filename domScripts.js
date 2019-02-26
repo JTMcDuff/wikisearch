@@ -1,12 +1,20 @@
 /*
-* @function -- Gets search term fron input box and clears input.
-* @returns -- string from search input
+* @function -- Gets search term fron input boxs and clears input.
+* @returns -- object of search terms
 */
-function getSearchTerm() {
-	var searchTerm = document.getElementById('search-input').value;
-	document.getElementById('search-input').value = '';
-	
-	return searchTerm;
+function getSearchTerms() {
+	let searchTerms = {};
+	let searchTerm = document.getElementById('search-input');
+	let numResults = document.getElementById('search-num-items');
+
+	searchTerms.searchTerm = searchTerm.value;
+	searchTerms.numResults = Number(numResults.value);
+
+	searchTerm.value = '';
+	numResults.value = '';
+
+	console.log(searchTerms);
+	return searchTerms;
 };
 
 /**

@@ -30,16 +30,18 @@ function makeWikiAPICall(searchTerm) {
 * @inputs -- string search term
 * @returns -- URL object ready for fetch
 */
-function constructURL(searchTerm) {
+function constructURL(searchTerms) {
 	// Designed for future expansion
 	let url = new URL('https://en.wikipedia.org/w/api.php'),
 	params = {
 		'action': 'query',
 		'list':'search',
-		'srsearch': searchTerm,
+		'srsearch': searchTerms.searchTerm,
+		'srlimit': searchTerms.numResults,
 		'format':'json',
 		'origin': '*'
 	};
 	Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+	console.log('URL ', url);
 	return url;
 };
