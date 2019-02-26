@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wikisearch</title>
     <script src="apiScripts.js"></script>
     <script src="domScripts.js"></script>
     <script src="sortingScripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
+
   <body>
   	<header>
   		<h1>Wikisearch</h1>
+  		<h2>Charles Schwab Coding Challenge</h2>
   		<form>
 	  		<input type="text" id="search-input" name="Search Wikipedia" value="Search Me">
 	  		<input type="text" id="search-num-items" name="Number of Results" value="5">
@@ -56,8 +61,7 @@
   	* @function handles searching and processing wikipedia
   	*/
   	function searchWiki() {
-  		let searchTerms = getSearchTerms();
-  		makeWikiAPICall(searchTerms)
+  		makeWikiAPICall(getSearchTerms())
   		.then(results =>{
   			wikiResults = formatResults(results);
   			renderResults(wikiResults);

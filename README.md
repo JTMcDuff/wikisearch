@@ -7,12 +7,16 @@
 - Read data from the Wikipedia API
 - Format and display data in organized fashion
 - Add sorting/filtering
--- Sort buttons for each data type?
--- Filter for wordcount, perhaps?
+-- Sort buttons for each data type -- done for relevant data types
 - Add additional touches as necessary or if inspiration strikes
+-- Add number of items selector -- done.
 
 ## Constraints
 - Raw HTML/JS/CSS only. No frameworks
 
 ## Deliverable
 - Github or codepen -- Using Github.
+
+
+## Notes for Enhancement:
+- 

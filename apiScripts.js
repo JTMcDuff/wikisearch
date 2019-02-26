@@ -20,7 +20,7 @@ function makeWikiAPICall(searchTerm) {
 	})
 	.catch(error => {
 		// TODO JOHNNY: Update with more effective error handling.
-		console.log(error);
+		console.log('API call failed ', error);
 		return error;
 	});
 };
@@ -42,6 +42,5 @@ function constructURL(searchTerms) {
 		'origin': '*'
 	};
 	Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-	console.log('URL ', url);
 	return url;
 };

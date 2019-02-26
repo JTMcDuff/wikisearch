@@ -13,7 +13,6 @@ function getSearchTerms() {
 	searchTerm.value = '';
 	numResults.value = '';
 
-	console.log(searchTerms);
 	return searchTerms;
 };
 
@@ -28,7 +27,6 @@ function formatResults(results) {
 	let resultsArray = searchResults.map(result =>{
 		return [result,formatResult(result)];
 	});
-	console.log('resultsArray ', resultsArray);
 	return resultsArray;
 };
 
