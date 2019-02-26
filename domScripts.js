@@ -18,6 +18,7 @@ function getSearchTerms() {
 		return;
 	}
 
+
 	searchTerms.searchTerm = searchTerm;
 	searchTerms.numResults = numResults;
 
@@ -49,9 +50,11 @@ function formatResults(results) {
 */
 function formatResult(result) {
 	let resultDiv = document.createElement('div');
+	resultDiv.classList.add('result-div');
 	let titleSpan = document.createElement('span');
 
 	let wordCount = document.createElement('p');
+	wordCount.classList.add('wordcount');
 	wordCount.innerHTML = 'Wordcount: ' + result.wordcount;
 
 	let pageLink = document.createElement('a');
@@ -61,6 +64,7 @@ function formatResult(result) {
 
 	let snippet = document.createElement('p');
 	snippet.innerHTML = 'Snippet: ' + result.snippet;
+
 
 	titleSpan.appendChild(pageLink);
 	titleSpan.appendChild(wordCount);

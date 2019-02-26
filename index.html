@@ -15,28 +15,41 @@
   	<header class="main-header">
   		<h1>Wikisearch</h1>
   		<h2>Charles Schwab Coding Challenge</h2>
-  		<form>
-	  		<input type="text" id="search-input" name="Search Wikipedia" value="Search Me">
-	  		<input type="text" id="search-num-items" name="Number of Results" value="5">
-	  		<button type="button" name="Search Button" onclick="searchWiki()">
-	  			Search
+  		<form class="search-form">
+  			<div class="form-group">
+	  			<label for="search-input" class="search-labels">Search Terms</label>
+		  		<input type="text" id="search-input" name="Search Wikipedia" value="Search Me" class="search-inputs">
+	  		</div>
+
+	  		<div class="form-group">
+		  		<label for="search-num-Items" class="search-labels">Max Results</label>
+		  		<input type="text" id="search-num-items" name="Number of Results" value="5" class="search-inputs">
+	  		</div>
+
+  			<button type="button" name="Search Button" onclick="searchWiki()">
+				Search
 	  		</button>
+
 	  		<button type="button" name="Clear Results" onclick="clearResults()">
 	  			Clear
 	  		</button>
-	  		<button type="button" name="Sort by Title" onclick="sortByTitle()">
-	  			Sort by Title
-	  		</button>
-	  		<button type="button" name="Sort by Word Count" onclick="sortByWordCount()">
-	  			Sort by Word Count
-	  		</button>
+
   		</form>
   	</header>
 
   	<main id="main-search">
-  		<h2> Search Results</h2>
+  		<section class="results-heading">
+	  		<h2> Search Results</h2>
 
-  		<div id="results-container"></div>
+  			<button type="button" class="sort-button" name="Sort by Title" onclick="sortByTitle()">
+	  			Sort by Title
+	  		</button>
+
+	  		<button type="button" class="sort-button" name="Sort by Word Count" onclick="sortByWordCount()">
+	  			Sort by Word Count
+	  		</button>
+  		</section>
+  		<div id="results-container" class="results"></div>
 			
   		</div>
 
@@ -61,7 +74,8 @@
   	* @function handles searching and processing wikipedia
   	*/
   	function searchWiki() {
-  		makeWikiAPICall(getSearchTerms())
+  		// TODO JOHNNY: Update to handle input validation
+  		makeWikiAPICall(getSearchTerms()) 
   		.then(results =>{
   			wikiResults = formatResults(results);
   			renderResults(wikiResults);

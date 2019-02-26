@@ -3,18 +3,61 @@ body {
 	margin: 0;
 }
 
-h1 {
+h1,h2 {
 	margin-top: 0;
+	margin-bottom: .8125rem;
+}
+
+
+label {
+	display: inline-block;
+	width: 100px;
+
+}
+
+button {
+	margin-bottom: .8125rem;
+	margin-top: .8125rem;
 }
 
 .main-header {
-	background-color: #00a0df;
+	background-color: #037dae;
 	color: #ffffff;
 	text-align: center;
 }
 
 .results {
-
+	padding: .8125rem;
 }
+
+.search-form {
+	width: 100%;
+}
+
+.search-inputs {
+	width: 35%;
+}
+
+.results-heading {
+	background-color: #00a0df;
+	color: #ffffff;
+	text-align: center;
+}
+
+.sort-button {
+	margin-top: 0;
+}
+
+.wordcount {
+	display: inline;
+	float: right;
+	margin-top: 0;
+}
+
+.result-div {
+	border-bottom: 1px solid #037dae;
+	margin-bottom: .8125rem;
+}
+
 
 @media 
