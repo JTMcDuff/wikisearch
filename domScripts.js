@@ -44,9 +44,9 @@ function formatResults(results) {
 };
 
 /**
- * @ function -- formats an individual result into html
- * @ inputs -- an object of a single search result
- * @ returns -- formatted html
+* @ function -- formats an individual result into html
+* @ inputs -- an object of a single search result
+* @ returns -- formatted html
 */
 function formatResult(result) {
 	let resultDiv = document.createElement('div');
@@ -75,10 +75,12 @@ function formatResult(result) {
 };
 
 /**
- * @function -- renders results onto DOM
- * @inputs -- formatted array
+* @function -- renders results onto DOM
+* @inputs -- formatted array
 */
 function renderResults(results) {
+	
+	// TODO JOHNNY: Update to only clear if currently rendered.
 	clearResults();
 	
 	let fragment = document.createDocumentFragment();
@@ -92,7 +94,7 @@ function renderResults(results) {
 };
 
 /**
- * @function -- clear search div and recreate
+* @function -- clear search div and recreate
 */
 function clearResults() {
 	let parent = document.getElementById('main-search');

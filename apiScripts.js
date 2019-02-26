@@ -1,11 +1,17 @@
 // *** API SCRIPTS
 
 /**
- * @function -- makes API call to wikipedia
+* @function -- makes API call to wikipedia
 * @inputs -- string search term
 * @returns -- promise object with parsed json
 */
 function makeWikiAPICall(searchTerm) {
+
+	// TODO JOHNNY: Replace with centralized error handling.
+	if (!searchTerm) {
+		return;
+	}
+
 	return fetch(constructURL(searchTerm), {
 	    method: 'GET',
 	    headers:{
@@ -26,7 +32,7 @@ function makeWikiAPICall(searchTerm) {
 };
 
 /**
- * @function -- constructs URL for service call
+* @function -- constructs URL for service call
 * @inputs -- string search term
 * @returns -- URL object ready for fetch
 */

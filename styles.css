@@ -1,3 +1,4 @@
+/* Basic styling -- mobile first */
 body {
 	background-color: white;
 	margin: 0;
@@ -19,6 +20,8 @@ button {
 	margin-bottom: .8125rem;
 	margin-top: .8125rem;
 }
+
+/* Class styles */
 
 .main-header {
 	background-color: #037dae;
@@ -62,26 +65,30 @@ button {
 	margin-bottom: .8125rem;
 }
 
+
+/* Styling for sizes other than XS */
 @media screen and (min-width: 480px) {
 	body {
-		max-width: 80%;
-		margin: 0 10% 0 10%;
+		max-width: 70%;
+		margin: 0 15% 0 15%;
 	}
 
 	label {
-		max-width: 20%;
+		max-width: 15%;
+		min-width: 10%;
 	}
 
-	button {
-		display: inline-block;
+	.search-button-container {
+		display: block;
 	}
 
 	.form-group {
-		display: inline;
+		display: block;
 	}
 
 	.search-inputs {
-		width: 15%;
+		max-width: 10%;
+		min-width: 5rem;
 	}
 
 	.wordcount {

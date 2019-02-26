@@ -1,5 +1,5 @@
 /**
- * @function -- sorts wikiResults by Title and rerenders
+* @function -- sorts wikiResults by Title and rerenders
 */
 function sortByTitle() {
 	if (wikiResults.length < 1) {
@@ -29,7 +29,7 @@ function sortByTitle() {
 };
 
 /**
- * @function -- sorts wikiResults by Title and rerenders
+* @function -- sorts wikiResults by Title and rerenders
 */
 function sortByWordCount() {
 	if (wikiResults.length < 1) {
