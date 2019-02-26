@@ -4,11 +4,23 @@
 */
 function getSearchTerms() {
 	let searchTerms = {};
-	let searchTerm = document.getElementById('search-input');
-	let numResults = document.getElementById('search-num-items');
+	let searchTerm = document.getElementById('search-input').value;
+	let numResults = Number(document.getElementById('search-num-items').value);
 
-	searchTerms.searchTerm = searchTerm.value;
-	searchTerms.numResults = Number(numResults.value);
+	// Input Validation
+	if (searchTerm === '') {
+		alert('Please input a search value');
+		return;
+	}
+
+	if (isNaN(numResults)) {
+		alert('Please input a number of results to return');
+		return;
+	}
+
+	searchTerms.searchTerm = searchTerm;
+	searchTerms.numResults = numResults;
+
 
 	searchTerm.value = '';
 	numResults.value = '';
@@ -85,5 +97,6 @@ function clearResults() {
 
 	let resultsDiv = document.createElement('div');
 	resultsDiv.id = "results-container";
+	resultsDiv.classList.add('results');
 	parent.appendChild(resultsDiv);
 };
