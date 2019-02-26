@@ -63,7 +63,7 @@ function formatResult(result) {
 	pageLink.text = result.title;
 
 	let snippet = document.createElement('p');
-	snippet.innerHTML = 'Snippet: ' + result.snippet;
+	snippet.innerHTML = 'Snippet: ' + result.snippet + '...';
 
 
 	titleSpan.appendChild(pageLink);

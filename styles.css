@@ -54,10 +54,39 @@ button {
 	margin-top: 0;
 }
 
+.results {
+}
+
 .result-div {
-	border-bottom: 1px solid #037dae;
+	border-bottom: 2px solid #037dae;
 	margin-bottom: .8125rem;
 }
 
+@media screen and (min-width: 480px) {
+	body {
+		max-width: 80%;
+		margin: 0 10% 0 10%;
+	}
 
-@media 
+	label {
+		max-width: 20%;
+	}
+
+	button {
+		display: inline-block;
+	}
+
+	.form-group {
+		display: inline;
+	}
+
+	.search-inputs {
+		width: 15%;
+	}
+
+	.wordcount {
+		display: block;
+		float: none;
+		margin: .8125rem 0 .8125rem 0;
+	}
+}

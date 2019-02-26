@@ -10,6 +10,7 @@
 -- Sort buttons for each data type -- done for relevant data types
 - Add additional touches as necessary or if inspiration strikes
 -- Add number of items selector -- done.
+-- Add clear functionality and data validation -- done
 
 ## Constraints
 - Raw HTML/JS/CSS only. No frameworks
